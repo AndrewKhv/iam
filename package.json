@@ -1,0 +1,23 @@
+{
+  "name": "premium-cv-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "serve": "serve -s dist -l 3000"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.0.20",
+    "@fontsource/newsreader": "^5.0.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "serve": "^14.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.2.0"
+  }
+}
