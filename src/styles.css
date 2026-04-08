@@ -263,6 +263,7 @@ a {
   margin: 0;
   font-size: clamp(3.4rem, 7vw, 6rem);
   line-height: 0.95;
+  text-wrap: balance;
 }
 
 .hero-role {
@@ -271,11 +272,16 @@ a {
   color: var(--muted);
 }
 
+.hero-mobile-glance {
+  display: none;
+}
+
 .hero-value {
-  max-width: 16ch;
+  max-width: 18ch;
   margin: 28px 0 0;
   font-size: clamp(1.6rem, 3vw, 2.5rem);
   line-height: 1.08;
+  text-wrap: balance;
 }
 
 .hero-summary {
@@ -460,6 +466,28 @@ a {
   font-weight: 600;
 }
 
+.hero-mobile-glance__status,
+.hero-mobile-glance__location,
+.hero-mobile-glance__summary {
+  margin: 0;
+}
+
+.hero-mobile-glance__status {
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.hero-mobile-glance__location {
+  margin-top: 6px;
+  font-weight: 650;
+}
+
+.hero-mobile-glance__summary {
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .section {
   padding: 88px 0;
   scroll-margin-top: calc(var(--topbar-height) + 28px);
@@ -491,6 +519,7 @@ a {
   margin: 0;
   font-size: clamp(2rem, 4.2vw, 3.4rem);
   line-height: 1.04;
+  text-wrap: balance;
 }
 
 .section-description {
@@ -814,6 +843,7 @@ a {
   margin: 10px 0 18px;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 .testimonial-meta {
@@ -1073,49 +1103,158 @@ html[lang='ru'] .metric-card__value {
   }
 }
 
+@media (max-width: 1040px) {
+  .topbar {
+    gap: 14px;
+    padding: 10px 14px;
+    border-radius: 28px;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .topbar__controls {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 720px) {
   :root {
     --container: min(100vw - 24px, 1160px);
   }
 
   .topbar-wrap {
-    padding-top: 10px;
+    padding-top: 6px;
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: stretch;
-    border-radius: 28px;
+    gap: 10px;
+    min-height: 0;
+    padding: 8px 10px;
   }
 
   .topbar__controls {
-    flex-direction: column;
-    align-items: stretch;
-    margin-left: 0;
+    width: 100%;
+    justify-content: flex-end;
+    margin-left: auto;
   }
 
   .brand-mark {
-    justify-content: center;
-  }
-
-  .site-nav {
-    padding-bottom: 2px;
+    min-width: 0;
+    font-size: 0.88rem;
   }
 
   .locale-switcher {
-    align-self: center;
+    margin-left: auto;
+    padding: 3px;
+  }
+
+  .locale-switcher__button {
+    min-width: 42px;
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 0.8rem;
   }
 
   .hero {
-    padding-bottom: 44px;
+    gap: 24px;
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+
+  .hero-copy .section-eyebrow {
+    display: none;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.65rem, 12vw, 3.8rem);
+    line-height: 0.98;
+  }
+
+  .hero-role {
+    margin-top: 12px;
+    font-size: 0.98rem;
+  }
+
+  .hero-mobile-glance {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 14px;
+    margin-top: 18px;
+    padding: 16px;
+  }
+
+  .hero-mobile-glance__status,
+  .hero-mobile-glance__location {
+    font-size: 0.92rem;
+  }
+
+  .hero-mobile-glance__location {
+    margin-top: 0;
+  }
+
+  .hero-mobile-glance__summary {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .hero-mobile-glance .portrait-card__focus {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
+  .hero-mobile-glance .portrait-card__focus span {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .hero-value {
+    max-width: none;
+    margin-top: 16px;
+    font-size: clamp(1.2rem, 5.8vw, 1.7rem);
+    line-height: 1.16;
+  }
+
+  .hero-summary {
+    display: none;
+  }
+
+  .cta-row {
+    margin-top: 20px;
+  }
+
+  .hero-strengths {
+    display: none;
+  }
+
+  .hero-visual {
+    display: none;
   }
 
   .section {
-    padding: 72px 0;
+    padding: 64px 0;
   }
 
   .section-tight {
     padding-top: 16px;
+  }
+
+  .section-header {
+    margin-bottom: 26px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  .section-description {
+    margin-top: 12px;
+    font-size: 0.96rem;
+    line-height: 1.65;
   }
 
   .metrics-grid {
@@ -1140,5 +1279,35 @@ html[lang='ru'] .metric-card__value {
     bottom: 18px;
     width: 52px;
     height: 52px;
+  }
+
+  html[lang='ru'] .hero-copy h1 {
+    font-size: clamp(2.2rem, 10.6vw, 3.15rem);
+    line-height: 1;
+  }
+
+  html[lang='ru'] .section-header h2 {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    line-height: 1.12;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar-wrap .container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .brand-mark {
+    display: none;
+  }
+
+  .topbar {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .topbar__controls {
+    width: auto;
   }
 }

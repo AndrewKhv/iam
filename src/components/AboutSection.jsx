@@ -8,7 +8,6 @@ function AboutSection({ about, teaching }) {
         <SectionHeader
           eyebrow={about.eyebrow}
           title={about.title}
-          description={about.description}
           titleId="about-title"
         />
         <div className="about-layout">

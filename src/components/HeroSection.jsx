@@ -11,6 +11,16 @@ function HeroSection({ hero, meta, contact }) {
           <p className="section-eyebrow">{hero.eyebrow}</p>
           <h1 id="hero-title">{hero.fullName}</h1>
           <p className="hero-role">{hero.title}</p>
+          <div className="hero-mobile-glance surface-card">
+            <p className="hero-mobile-glance__status">{meta.availability}</p>
+            <p className="hero-mobile-glance__location">{meta.location}</p>
+            <p className="hero-mobile-glance__summary">{meta.remotePreference}</p>
+            <div className="portrait-card__focus">
+              {hero.focusAreas.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
           <p className="hero-value">{hero.valueProposition}</p>
           <p className="hero-summary">{hero.summary}</p>
           <div className="cta-row">

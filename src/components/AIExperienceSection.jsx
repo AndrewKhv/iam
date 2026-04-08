@@ -14,7 +14,6 @@ function AIExperienceSection({ aiExperience }) {
         <div className="ai-grid">
           <Reveal as="article" className="surface-card copy-card">
             <h3>{aiExperience.usageTitle}</h3>
-            <p>{aiExperience.intro}</p>
             <ul className="detail-list">
               {aiExperience.details.map((item) => (
                 <li key={item}>{item}</li>
