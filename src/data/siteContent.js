@@ -1,7 +1,5 @@
 const SHARED_ASSETS = {
   photoSrc: '/profile-placeholder.jpg',
-  cvFile: '/andrei-khramchenkov-cv.pdf',
-  cvEnabled: false,
   contactLinks: {
     email: {
       label: 'a.d.khramchenkov@gmail.com',
@@ -44,8 +42,8 @@ export const siteContentByLocale = {
       languages: ['English (C1)', 'Russian (Native)'],
       photoSrc: SHARED_ASSETS.photoSrc,
       photoAlt: 'Portrait of Andrei Khramchenkov',
-      cvFile: SHARED_ASSETS.cvFile,
-      cvEnabled: SHARED_ASSETS.cvEnabled,
+      cvFile: '/CV Andrei Khramchenkov.pdf',
+      cvEnabled: true,
     },
     navigation: [
       { id: 'about', label: 'About' },
@@ -389,8 +387,8 @@ export const siteContentByLocale = {
       languages: ['Английский (C1)', 'Русский (родной)'],
       photoSrc: SHARED_ASSETS.photoSrc,
       photoAlt: 'Портрет Андрея Храмченкова',
-      cvFile: SHARED_ASSETS.cvFile,
-      cvEnabled: SHARED_ASSETS.cvEnabled,
+      cvFile: '/CV Андрей Храмченков.pdf',
+      cvEnabled: true,
     },
     navigation: [
       { id: 'about', label: 'Обо мне' },
